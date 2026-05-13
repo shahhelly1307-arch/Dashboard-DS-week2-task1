@@ -78,13 +78,18 @@ fig_gauge = go.Figure(go.Indicator(
 fig_gauge.update_layout(height=300, paper_bgcolor="rgba(0,0,0,0)", font={'color': "white"}, margin=dict(l=20,r=20,t=30,b=20))
 st.plotly_chart(fig_gauge, use_container_width=True)
 
-# 9. DISPLAY ANALYSIS GRAPH (The part that was missing!)
+# 9. DISPLAY ANALYSIS GRAPH (Fixed version)
 st.write("---")
 st.subheader("📈 Trend Analysis: Hours vs Score")
+
+# Using a standard scatter without the automatic 'ols' trendline to avoid the error
 fig_scatter = px.scatter(df, x="Hours_Studied", y="Final_Score", 
-                         trendline="ols", 
                          color="Attendance_Percentage",
-                         template="plotly_dark")
+                         template="plotly_dark",
+                         title="Student Performance Trends")
+
+# This makes it look professional and keeps it scrollable
+fig_scatter.update_layout(height=400)
 st.plotly_chart(fig_scatter, use_container_width=True)
 
 # 10. PROFESSIONAL FOOTER
