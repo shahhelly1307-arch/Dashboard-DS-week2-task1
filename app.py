@@ -89,4 +89,4 @@ st.plotly_chart(fig_scatter, use_container_width=True)
 
 # 10. PROFESSIONAL FOOTER
 st.markdown("---")
-st.caption("Lead Developer: Helly Shah | National Research Award Winner")
+st.caption("Lead Developer: Helly Shah")
